@@ -23,6 +23,20 @@ func main() {
 		Name:    "deepl cli",
 		Usage:   "Translate any text via deepl api.",
 		Version: "0.0.2",
+		Flags: []cli.Flag{
+			&cli.StringFlag{
+				Name:    "to",
+				Aliases: []string{"t"},
+				Value:   "EN-US",
+				Usage:   "language translate to",
+			},
+			&cli.StringFlag{
+				Name:    "from",
+				Aliases: []string{"f"},
+				Value:   "JA",
+				Usage:   "language translate from",
+			},
+		},
 		Action: func(c *cli.Context) error {
 			if c.NArg() > 1 {
 				fmt.Println("Please pass only one argument")
@@ -42,8 +56,8 @@ func main() {
 
 			q := req.URL.Query()
 			q.Add("text", c.Args().Get(0))
-			q.Add("source_lang", "JA")
-			q.Add("target_lang", "EN-US")
+			q.Add("source_lang", c.String("from"))
+			q.Add("target_lang", c.String("to"))
 			q.Add("auth_key", os.Getenv("DEEPL_AUTH_KEY"))
 			req.URL.RawQuery = q.Encode()
 
