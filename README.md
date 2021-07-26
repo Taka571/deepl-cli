@@ -16,3 +16,17 @@ OR
 deepl-cli $ deepl 猫
 cat
 ```
+
+# Options
+- `-from alias: -f` language translate from 
+- `-to   alias: -t` language translate to
+
+Example(Translate from French to Japanese)
+```
+deepl-cli $ deepl -f FR -t JA Traduction
+翻訳
+```
+
+Please see below.  
+https://www.deepl.com/docs-api/translating-text/request/
+
