@@ -53,6 +53,8 @@ func main() {
 			if err != nil {
 				panic(err)
 			}
+			req.Header.Set("Content-Type", "application/json")
+			req.Header.Set("Cache-Control", "no-cache")
 
 			q := req.URL.Query()
 			q.Add("text", c.Args().Get(0))
