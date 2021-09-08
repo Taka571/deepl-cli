@@ -1,4 +1,4 @@
-module deepl
+module github.com/Taka571/deepl-cli
 
 go 1.16
 
