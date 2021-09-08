@@ -5,7 +5,7 @@
 3. `$ export DEEPL_AUTH_KEY='your key'` 
   
 ```
-deepl-cli $ go run main.go deelp 翻訳
+$ go run main.go 翻訳
 translation
 ```
 
@@ -13,7 +13,7 @@ OR
 
 `deepl-cli $ go install`
 ```
-deepl-cli $ deepl 猫
+$ deepl-cli 猫
 cat
 ```
 
@@ -23,7 +23,7 @@ cat
 
 Example(Translate from French to Japanese)
 ```
-deepl-cli $ deepl -f FR -t JA Traduction
+$ deepl-cli -f FR -t JA Traduction
 翻訳
 ```
 
